@@ -1,20 +1,16 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import Contact from './Contact';
+import styled from 'styled-components';
+import StepWizard from './StepWizard';
 
-const StepWizard = () => (
-  <nav>
-    <Link to={'/contact'}>Contact</Link>
-    <Link to={'/location'}>Location</Link>
-    <Link to={'/property-details'}>Property Details</Link>
-    <Link to={'/preview'}>Preview</Link>
-    <Link to={'/add-ons'}>Add ons</Link>
-    <Link to={'/payment'}>Payment</Link>
-  </nav>
-);
+const Wrapper = styled.div`
+  background: #e8effc;
+  min-height: 100vh;
+`;
 
 const AdCreation = () => (
-  <div>
+  <Wrapper>
     <StepWizard />
     <Switch>
       <Route path={'/contact'} component={Contact} />
@@ -24,7 +20,7 @@ const AdCreation = () => (
       <Route path={'/preview'} component={Contact} />
       <Route path={'/payment'} component={Contact} />
     </Switch>
-  </div>
+  </Wrapper>
 );
 
 export default AdCreation;
